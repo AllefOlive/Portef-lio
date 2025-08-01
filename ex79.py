@@ -1,0 +1,16 @@
+número = list()
+while True:
+    n = int(input('Digite um valor: '))
+    if n not in número:
+        número.append(n)
+        print('Valor adicionado com sucesso...')
+    else:
+        print('Valor duplicado! Não posso adicionar!'.strip().upper()) #### strip para aceitar só letras e upper para colocar qualquer letra maiuscula ####
+    r = str(input('Quer continuar? [S/N] >>> '))
+    while r.upper() not in ['S','s', 'N','n']:
+        print('Erro! Responda S para sim ou N para não...')
+        r = str(input('Quer continuar? [S/N] >>> '.strip().upper()))
+    if r in ['N','n']:
+        break
+print('=-' * 30)
+print(f'Esses são so item da sua lita numerica: {sorted(número)}.')
